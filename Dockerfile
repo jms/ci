@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-RUN apt update && apt install -y \
+RUN apt-get update && apt-get install -y \
     build-essential \
     python-dev \
     libssl-dev \
@@ -8,7 +8,7 @@ RUN apt update && apt install -y \
     libpq-dev \
     postgresql-client \
     bzip2 \
-	unzip \
+    unzip \
     xz-utils \
     openjdk-8-jdk \
     openjdk-8-jre-headless \
@@ -16,10 +16,10 @@ RUN apt update && apt install -y \
     git
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt install nodejs
+RUN apt-get install nodejs
 
 # Clean up APT when done.
-RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY profile.d/java.sh /etc/profile.d/
 
