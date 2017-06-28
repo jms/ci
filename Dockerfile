@@ -1,14 +1,6 @@
-FROM krallin/ubuntu-tini:xenial
+FROM ubuntu:xenial
 
 RUN apt update && apt install -y \
-    python-pillow \
-    python-imaging \
-    python-psycopg2 \
-    libgeos-c1v5 \
-    python-numpy \
-    python-setuptools \
-    python-pip \
-    gunicorn \
     build-essential \
     python-dev \
     libssl-dev \
@@ -17,10 +9,6 @@ RUN apt update && apt install -y \
     postgresql-client \
     bzip2 \
 	unzip \
-    libpng-dev \
-    pngquant \
-    webp \
-    libgif-dev \
     xz-utils \
     openjdk-8-jdk \
     openjdk-8-jre-headless \
